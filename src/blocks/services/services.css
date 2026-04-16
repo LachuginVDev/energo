@@ -1,0 +1,126 @@
+.services{
+  padding-bottom: 120px;
+}
+
+.services__container{
+  padding-top: 60px;
+}
+
+.services__header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-bottom: 42px;
+}
+
+.services__mini{
+  color: var(--primary);
+  font-weight: 900;
+  letter-spacing: .08em;
+  font-size: 14px;
+}
+
+.services__lead{
+  font-weight: 800;
+  font-size: clamp(20px, 2.2vw, 34px);
+  line-height: 1.15;
+  max-width: 920px;
+}
+
+.services__cards{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  justify-items: stretch;
+}
+
+.service-card{
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(15, 23, 42, .08);
+}
+
+.service-card__image{
+  width: 100%;
+  height: 470px;
+  background:
+    linear-gradient(180deg, rgba(11, 95, 255, .08) 0%, rgba(11, 95, 255, .02) 100%),
+    linear-gradient(135deg, rgba(11, 95, 255, .22) 0%, rgba(2, 6, 23, .04) 60%);
+}
+
+.service-card__meta{
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  z-index: 2;
+}
+
+.service-card__title{
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.service-card__btn{
+  padding: 10px 14px;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.service-card:hover .service-card__btn,
+.service-card:focus-within .service-card__btn{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (max-width: 1200px){
+  .services__cards{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px){
+  .services__container{
+    padding-top: 40px;
+  }
+
+  .services__lead{
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .services__cards{
+    grid-template-columns: 1fr;
+  }
+
+  .service-card__image{
+    height: 160px;
+  }
+
+  .service-card__meta{
+    position: static;
+    padding: 0 24px 18px;
+    gap: 12px;
+  }
+
+  /* На тач-устройствах hover нет, поэтому кнопку показываем всегда */
+  .service-card__btn{
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}
+

@@ -1,0 +1,211 @@
+.processes{
+  padding-bottom: 120px;
+}
+
+.processes__container{
+  padding-top: 60px;
+}
+
+.processes__grid{
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.processes__left{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.processes-accordion__title{
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: .08em;
+  margin-bottom: 12px;
+}
+
+.processes-accordion__items{
+  display: grid;
+  gap: 12px;
+}
+
+.process-step{
+  border-radius: 20px;
+  position: relative;
+}
+
+/* Связующая полоска между пунктами, по центру иконки */
+.processes-accordion__items .process-step:not(:last-child)::after{
+  content: "";
+  position: absolute;
+  left: 38px; /* 14px padding + 24px (половина иконки 48px) */
+  top: 62px; /* 14px верх + 48px иконка */
+  bottom: -12px; /* тянем до следующего блока через gap */
+  width: 2px;
+  background: rgba(11, 95, 255, .28);
+  border-radius: 2px;
+}
+
+.process-step__summary{
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 14px;
+  background: rgba(255, 255, 255, .75);
+  border-radius: 20px;
+}
+
+.process-step__summary::-webkit-details-marker{
+  display: none;
+}
+
+.process-step__summary::marker{
+  display: none;
+}
+
+.process-step__icon{
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(11, 95, 255, .10);
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.process-step__label{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.process-step__title{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.process-step__subtitle{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.process-step__body{
+  padding: 14px 14px 18px;
+  border-top: 0;
+  border-radius: 0 0 20px 20px;
+  background: rgba(255, 255, 255, .75);
+  margin-left: 62px; /* уводим тело от вертикальной полоски под иконкой */
+}
+
+.process-step__text{
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.process-step__btn{
+  padding: 10px 14px;
+}
+
+.processes-form{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .65);
+}
+
+.processes-form__title{
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.processes-form__text{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.processes-form__link{
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.processes-form__row{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.processes-form__input{
+  flex: 1;
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, .14);
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+.processes-form__input:focus{
+  border-color: rgba(11, 95, 255, .5);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+.processes-form__submit{
+  white-space: nowrap;
+}
+
+.processes-form__check{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.processes-form__check input{
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+@media (max-width: 1200px){
+  .processes__grid{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .processes-form{
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 768px){
+  .processes__grid{
+    margin-top: 22px;
+    gap: 18px;
+  }
+
+  .processes__right{
+    width: 100%;
+  }
+
+  .processes-form{
+    padding: 16px;
+  }
+}
+
