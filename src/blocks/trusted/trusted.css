@@ -1,0 +1,47 @@
+.trusted{
+  padding-bottom: 120px;
+}
+
+.trusted__container{
+  padding-top: 60px;
+}
+
+.trusted__grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.trusted__item{
+  min-height: 92px;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, .08);
+  background: #fff;
+  display: grid;
+  place-items: center;
+  padding: 14px;
+}
+
+.trusted__item svg{
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  color: #a8bccf;
+}
+
+.trusted__grid.is-swiper{
+  display: block;
+  overflow: visible;
+  padding: 8px 6px 12px;
+}
+
+.trusted__grid.is-swiper .swiper-slide{
+  height: auto;
+}
+
+@media (max-width: 767px){
+  .trusted__container{
+    overflow: hidden;
+  }
+}
+

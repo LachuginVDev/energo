@@ -1,0 +1,31 @@
+.partners{
+  background: #ecf2f7;
+  padding-bottom: 120px;
+}
+
+.partners__container{
+  padding-top: 60px;
+}
+
+.partners__scheme{
+  margin: 0 auto;
+  max-width: 822px;
+  width: 100%;
+  height: 778px;
+  display: grid;
+  place-items: center;
+}
+
+.partners__svg{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 900px){
+  .partners__scheme{
+    height: auto;
+    aspect-ratio: 822 / 778;
+  }
+}
+

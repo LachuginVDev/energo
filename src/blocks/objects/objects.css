@@ -4,7 +4,7 @@
 
 .objects__cards{
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 24px;
   justify-items: center;
 }
@@ -37,20 +37,27 @@
   line-height: 1.55;
 }
 
-@media (max-width: 1200px){
-  .objects__cards{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.objects__cards.is-swiper{
+  display: block;
+  overflow: visible;
+  padding: 8px 8px 14px;
 }
 
-@media (max-width: 768px){
-  .objects__cards{
-    grid-template-columns: 1fr;
-    gap: 16px;
+.objects__cards.is-swiper .swiper-wrapper{
+  align-items: stretch;
+}
+
+.objects__cards.is-swiper .swiper-slide{
+  height: auto;
+}
+
+@media (max-width: 1199px){
+  .objects__container{
+    overflow: hidden;
   }
 
   .object-card{
-    max-width: 420px;
+    max-width: 100%;
   }
 }
 

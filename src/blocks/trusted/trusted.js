@@ -1,16 +1,16 @@
-import './objects.css';
+import './trusted.css';
 import 'swiper/css';
 import { Swiper } from 'swiper';
 
-export function initObjects() {
-  const grid = document.querySelector('.objects__cards');
+export function initTrusted() {
+  const grid = document.querySelector('.trusted__grid');
   if (!grid) return;
 
-  const sliderQuery = window.matchMedia('(max-width: 1199px)');
+  const mobileQuery = window.matchMedia('(max-width: 767px)');
   let swiperInstance = null;
   let wrapper = null;
 
-  const enableSlider = () => {
+  const enableMobileSlider = () => {
     if (swiperInstance) return;
 
     grid.classList.add('swiper', 'is-swiper');
@@ -18,7 +18,7 @@ export function initObjects() {
     wrapper = document.createElement('div');
     wrapper.className = 'swiper-wrapper';
 
-    const items = Array.from(grid.querySelectorAll('.object-card'));
+    const items = Array.from(grid.querySelectorAll('.trusted__item'));
     items.forEach((item) => {
       item.classList.add('swiper-slide');
       wrapper.appendChild(item);
@@ -27,19 +27,13 @@ export function initObjects() {
     grid.appendChild(wrapper);
 
     swiperInstance = new Swiper(grid, {
-      slidesPerView: 1.15,
-      spaceBetween: 16,
+      slidesPerView: 2,
+      spaceBetween: 12,
       speed: 450,
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 18,
-        },
-      },
     });
   };
 
-  const disableSlider = () => {
+  const disableMobileSlider = () => {
     if (!swiperInstance) return;
 
     swiperInstance.destroy(true, true);
@@ -58,17 +52,17 @@ export function initObjects() {
     grid.classList.remove('swiper', 'is-swiper');
   };
 
-  const syncObjectsMode = () => {
-    if (sliderQuery.matches) {
-      enableSlider();
+  const syncTrustedMode = () => {
+    if (mobileQuery.matches) {
+      enableMobileSlider();
     } else {
-      disableSlider();
+      disableMobileSlider();
     }
   };
 
-  syncObjectsMode();
-  sliderQuery.addEventListener('change', syncObjectsMode);
+  syncTrustedMode();
+  mobileQuery.addEventListener('change', syncTrustedMode);
 }
 
-initObjects();
+initTrusted();
 

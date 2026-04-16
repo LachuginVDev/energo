@@ -85,9 +85,23 @@
   pointer-events: auto;
 }
 
-@media (max-width: 1200px){
-  .services__cards{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+.services__cards.is-swiper{
+  display: block;
+  overflow: visible;
+  padding: 10px 8px 16px;
+}
+
+.services__cards.is-swiper .swiper-wrapper{
+  align-items: stretch;
+}
+
+.services__cards.is-swiper .swiper-slide{
+  height: auto;
+}
+
+@media (max-width: 1199px){
+  .services__container{
+    overflow: hidden;
   }
 }
 
@@ -100,10 +114,6 @@
     text-align: left;
     padding-left: 10px;
     padding-right: 10px;
-  }
-
-  .services__cards{
-    grid-template-columns: 1fr;
   }
 
   .service-card__image{

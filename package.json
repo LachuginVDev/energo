@@ -9,6 +9,8 @@
   },
   "devDependencies": {
     "vite": "latest"
+  },
+  "dependencies": {
+    "swiper": "^12.1.3"
   }
 }
-
