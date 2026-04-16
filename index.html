@@ -595,7 +595,151 @@
           </div>
         </div>
       </section>
+
+      <section class="faq" id="faq">
+        <div class="container faq__container">
+          <div class="faq__grid">
+            <div class="faq__left">
+              <div class="faq__mini">Вопрос-ответ</div>
+              <h2 class="faq__title">Частые вопросы</h2>
+              <p class="faq__subtitle">Собрали ответы на популярные вопросы по срокам, этапам и условиям работы.</p>
+
+              <div class="faq__actions">
+                <button class="btn btn--secondary" type="button">Все вопросы</button>
+                <button class="btn btn--primary" type="button">Задать вопрос</button>
+              </div>
+            </div>
+
+            <div class="faq__right" aria-label="Список вопросов">
+              <details class="faq-item" open>
+                <summary class="faq-item__summary">
+                  <span class="faq-item__arrow" aria-hidden="true"></span>
+                  <span class="faq-item__label">Сколько времени занимает запуск проекта?</span>
+                </summary>
+                <div class="faq-item__body">
+                  <p class="faq-item__text">Срок зависит от объёма задач, обычно базовые этапы занимают от 2 до 6 недель.</p>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-item__summary">
+                  <span class="faq-item__arrow" aria-hidden="true"></span>
+                  <span class="faq-item__label">Можно ли начать с аудита без внедрения?</span>
+                </summary>
+                <div class="faq-item__body">
+                  <p class="faq-item__text">Да, можно начать с обследования и получить рекомендации отдельным этапом.</p>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-item__summary">
+                  <span class="faq-item__arrow" aria-hidden="true"></span>
+                  <span class="faq-item__label">Как оформляется сопровождение после сдачи?</span>
+                </summary>
+                <div class="faq-item__body">
+                  <p class="faq-item__text">Мы фиксируем регламент в договоре и назначаем ответственного специалиста по проекту.</p>
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-item__summary">
+                  <span class="faq-item__arrow" aria-hidden="true"></span>
+                  <span class="faq-item__label">Работаете ли вы с регионами?</span>
+                </summary>
+                <div class="faq-item__body">
+                  <p class="faq-item__text">Да, работаем с объектами в регионах, включая удалённое проектирование и выезды.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer" id="contacts">
+      <div class="container site-footer__container">
+        <div class="site-footer__block site-footer__block--cta">
+          <div class="footer-cta">
+            <div class="footer-cta__left">
+              <h2 class="footer-cta__title">Обсудим ваш проект</h2>
+              <p class="footer-cta__text">Оставьте заявку, и мы свяжемся с вами, чтобы подобрать оптимальное решение под вашу задачу.</p>
+            </div>
+
+            <form class="footer-cta__form" action="#" method="post" aria-label="Форма обратной связи">
+              <input class="footer-cta__input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" />
+              <input class="footer-cta__input" type="tel" name="phone" placeholder="Телефон" autocomplete="tel" />
+              <button class="btn btn--primary footer-cta__submit" type="submit">Отправить заявку</button>
+
+              <label class="footer-cta__check">
+                <input type="checkbox" name="policy_footer_1" />
+                <span>Согласен(а) с политикой конфиденциальности</span>
+              </label>
+              <label class="footer-cta__check">
+                <input type="checkbox" name="policy_footer_2" />
+                <span>Согласен(а) на обработку персональных данных</span>
+              </label>
+            </form>
+          </div>
+        </div>
+
+        <div class="site-footer__block site-footer__block--nav">
+          <div class="footer-nav">
+            <div class="footer-nav__left">
+              <div class="footer-logo" aria-label="Логотип">
+                <span class="footer-logo__mark" aria-hidden="true">E</span>
+                <span class="footer-logo__text">Energo</span>
+              </div>
+
+              <div class="footer-nav__menus">
+                <ul class="footer-nav__menu">
+                  <li><a href="#">Главная</a></li>
+                  <li><a href="#">Услуги</a></li>
+                  <li><a href="#">О компании</a></li>
+                  <li><a href="#">Проекты</a></li>
+                </ul>
+                <ul class="footer-nav__menu">
+                  <li><a href="#">Партнеры</a></li>
+                  <li><a href="#">Отзывы</a></li>
+                  <li><a href="#">Вопрос-ответ</a></li>
+                  <li><a href="#">Контакты</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer-nav__contacts">
+              <a class="footer-nav__contact" href="tel:+79990000000">+7 (999) 000-00-00</a>
+              <div class="footer-nav__contact">г. Москва, ул. Примерная, 10</div>
+              <a class="footer-nav__contact" href="mailto:info@example.com">info@example.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer__block site-footer__block--meta">
+          <div class="footer-meta">
+            <div class="footer-meta__left">
+              <div class="footer-rating" aria-label="Рейтинг Яндекс">
+                <div class="footer-rating__image" role="img" aria-label="Рейтинг Яндекс 5.0"></div>
+              </div>
+              <div class="footer-meta__year">2026</div>
+              <a class="footer-meta__policy" href="#">Политика конфиденциальности</a>
+            </div>
+
+            <div class="footer-meta__right">
+              <div class="footer-meta__company">ООО «Энерго»</div>
+              <div class="footer-meta__address">123456, г. Москва, ул. Примерная, д. 10, офис 5</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer__block site-footer__block--copy">
+          <div class="footer-copy">
+            <span>© 2026 Energo</span>
+            <span>Разработано в</span>
+            <span class="footer-copy__agency" aria-label="Логотип агентства">WEB Agency</span>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script type="module" src="/src/main.js"></script>
   </body>

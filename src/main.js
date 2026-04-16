@@ -8,4 +8,6 @@ import './blocks/work-types/work-types.js';
 import './blocks/partners/partners.js';
 import './blocks/trusted/trusted.js';
 import './blocks/reviews/reviews.js';
+import './blocks/faq/faq.js';
+import './blocks/footer/footer.js';
 
