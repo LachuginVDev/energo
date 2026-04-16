@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:portable": "node ./tools/build-portable.mjs"
   },
   "devDependencies": {
+    "esbuild": "latest",
     "vite": "latest"
   },
   "dependencies": {

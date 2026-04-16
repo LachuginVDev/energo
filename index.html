@@ -57,7 +57,15 @@
                   <div class="hero-card__grid">
                     <div class="hero-card__left">
                       <h2 class="hero-card__title">Заголовок</h2>
-                      <button class="btn btn--secondary" type="button">Кнопка</button>
+                      <button
+                        class="btn btn--secondary"
+                        type="button"
+                        data-request-modal-open
+                        data-request-modal-title="Оставить заявку"
+                        data-request-modal-context="hero"
+                      >
+                        Кнопка
+                      </button>
                     </div>
           
                   </div>
@@ -606,7 +614,16 @@
 
               <div class="faq__actions">
                 <button class="btn btn--secondary" type="button">Все вопросы</button>
-                <button class="btn btn--primary" type="button">Задать вопрос</button>
+                <button
+                  class="btn btn--primary"
+                  type="button"
+                  data-request-modal-open
+                  data-request-modal-title="Задать вопрос"
+                  data-request-modal-lead="Кратко опишите вопрос — мы ответим после обработки заявки."
+                  data-request-modal-context="faq"
+                >
+                  Задать вопрос
+                </button>
               </div>
             </div>
 
@@ -740,6 +757,130 @@
         </div>
       </div>
     </footer>
+
+    <div class="request-modal" data-request-modal-root hidden>
+      <div
+        class="request-modal__backdrop"
+        data-request-modal-close
+        tabindex="-1"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="request-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="request-modal-title"
+      >
+        <button
+          class="request-modal__close"
+          type="button"
+          aria-label="Закрыть"
+          data-request-modal-close
+        ></button>
+        <h2 class="request-modal__title" id="request-modal-title" data-request-modal-title-slot>
+          Оставить заявку
+        </h2>
+        <p class="request-modal__lead" data-request-modal-lead-slot>
+          Заполните поля — перезвоним и уточним детали.
+        </p>
+        <p class="request-modal__status" data-request-modal-status role="status" aria-live="polite"></p>
+        <form class="request-modal__form" data-request-modal-form action="#" method="post">
+          <input type="hidden" name="context" value="" data-request-modal-context-field />
+          <div class="request-modal__field">
+            <label class="request-modal__label" for="request-modal-name">Имя</label>
+            <input
+              class="request-modal__input"
+              id="request-modal-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <div class="request-modal__field">
+            <label class="request-modal__label" for="request-modal-phone">Телефон</label>
+            <input
+              class="request-modal__input"
+              id="request-modal-phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              required
+            />
+          </div>
+          <div class="request-modal__field">
+            <label class="request-modal__label" for="request-modal-email">E-mail</label>
+            <input
+              class="request-modal__input"
+              id="request-modal-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+            />
+          </div>
+          <div class="request-modal__field">
+            <label class="request-modal__label" for="request-modal-message">Комментарий</label>
+            <textarea
+              class="request-modal__textarea"
+              id="request-modal-message"
+              name="message"
+              rows="4"
+            ></textarea>
+          </div>
+          <label class="request-modal__check">
+            <input type="checkbox" name="agree" value="1" required />
+            <span>Согласен(а) на обработку персональных данных и с политикой конфиденциальности</span>
+          </label>
+          <div class="request-modal__actions">
+            <button class="btn btn--primary" type="submit">Отправить</button>
+            <button class="btn btn--secondary" type="button" data-request-modal-close>Отмена</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="feedback" data-feedback>
+      <div class="feedback__panel" role="dialog" aria-modal="true" aria-label="Обратная связь" hidden>
+        <button class="feedback__close" type="button" aria-label="Закрыть" data-feedback-close></button>
+        <p class="feedback__title">Связаться с нами</p>
+        <p class="feedback__text">Выберите удобный способ — ответим в рабочее время.</p>
+        <div class="feedback__links">
+          <a class="feedback__link" href="tel:+79990000000">
+            Позвонить
+            <small>Телефон</small>
+          </a>
+          <a class="feedback__link" href="mailto:info@example.com">
+            Написать
+            <small>Почта</small>
+          </a>
+          <button
+            class="feedback__link"
+            type="button"
+            data-request-modal-open
+            data-request-modal-title="Оставить заявку"
+            data-request-modal-context="floating-widget"
+          >
+            Заявка
+            <small>Форма</small>
+          </button>
+        </div>
+      </div>
+
+      <button
+        class="feedback__toggle"
+        type="button"
+        aria-label="Открыть обратную связь"
+        aria-expanded="false"
+        data-feedback-toggle
+      >
+        <svg class="feedback__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path
+            fill="currentColor"
+            d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm0 12H6l-2 2V4h16v10Z"
+          />
+        </svg>
+      </button>
+    </div>
 
     <script type="module" src="/src/main.js"></script>
   </body>

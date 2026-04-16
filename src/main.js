@@ -1,4 +1,5 @@
 import './styles/global.css';
+import './blocks/request-modal/request-modal.js';
 import './blocks/hero/hero.js';
 import './blocks/services/services.js';
 import './blocks/about/about.js';
@@ -10,4 +11,5 @@ import './blocks/trusted/trusted.js';
 import './blocks/reviews/reviews.js';
 import './blocks/faq/faq.js';
 import './blocks/footer/footer.js';
+import './blocks/feedback/feedback.js';
 
