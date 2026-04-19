@@ -1,7 +1,11 @@
 import './hero.css';
+import logoSrc from '../../assets/images/ПЭСК.svg';
 
 export function initHero() {
-  // Пока только верстка. JS будет добавляться по мере появления интерактивов.
+  const logoImg = document.querySelector('[data-hero-logo-img]');
+  if (logoImg instanceof HTMLImageElement) {
+    logoImg.src = logoSrc;
+  }
 }
 
 initHero();

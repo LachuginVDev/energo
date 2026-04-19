@@ -15,16 +15,6 @@ if (root) {
 
   let lastTrigger = null;
 
-  const closeFeedbackWidget = () => {
-    const fb = document.querySelector('[data-feedback]');
-    if (!fb) return;
-    fb.classList.remove('is-open');
-    const toggle = fb.querySelector('[data-feedback-toggle]');
-    const panel = fb.querySelector('.feedback__panel');
-    toggle?.setAttribute('aria-expanded', 'false');
-    if (panel instanceof HTMLElement) panel.setAttribute('hidden', '');
-  };
-
   const isOpen = () => root.classList.contains('is-open');
 
   const setOpen = (open) => {
@@ -56,7 +46,6 @@ if (root) {
 
   const openFromTrigger = (trigger) => {
     lastTrigger = trigger;
-    closeFeedbackWidget();
     applyTrigger(trigger);
     setOpen(true);
     const first = form?.querySelector(

@@ -11,5 +11,4 @@ import './blocks/trusted/trusted.js';
 import './blocks/reviews/reviews.js';
 import './blocks/faq/faq.js';
 import './blocks/footer/footer.js';
-import './blocks/feedback/feedback.js';
 

@@ -1,9 +1,14 @@
 .services{
-  padding-bottom: 120px;
+  padding-bottom: var(--section-pad-bottom);
 }
 
 .services__container{
-  padding-top: 60px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+  padding-top: var(--section-pad-top);
 }
 
 .services__header{
@@ -11,15 +16,15 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 10px;
-  margin-bottom: 42px;
+  gap: clamp(8px, 1.5vw, 10px);
+  margin-bottom: clamp(28px, 5vw, 42px);
 }
 
 .services__mini{
   color: var(--primary);
   font-weight: 900;
   letter-spacing: .08em;
-  font-size: 14px;
+  font-size: clamp(12px, 1.1vw, 14px);
 }
 
 .services__lead{
@@ -45,11 +50,34 @@
 }
 
 .service-card__image{
+  position: relative;
   width: 100%;
-  height: 470px;
+  height: clamp(260px, 42vw, 470px);
+  overflow: hidden;
+}
+
+.service-card__image::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
   background:
     linear-gradient(180deg, rgba(11, 95, 255, .08) 0%, rgba(11, 95, 255, .02) 100%),
     linear-gradient(135deg, rgba(11, 95, 255, .22) 0%, rgba(2, 6, 23, .04) 60%);
+  background-position: center, center;
+  background-repeat: no-repeat;
+}
+
+.service-card__img{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .service-card__meta{
@@ -66,16 +94,54 @@
 
 .service-card__title{
   margin: 0;
-  font-size: 18px;
+  font-family: var(--font-family);
+  font-weight: 700;
+
+  font-size: clamp(14px, 1.2vw, 20px);
   line-height: 1.2;
+
+  letter-spacing: clamp(0.05em, 0.1vw, 0.1em);
+
+  text-transform: uppercase;
+  color: var(--white);
+  transition: transform .24s ease;
 }
 
-.service-card__btn{
-  padding: 10px 14px;
+
+.service-card__btn {
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(12px);
   pointer-events: none;
-  transition: opacity .2s ease, transform .2s ease;
+  transition: opacity .24s ease, transform .24s ease;
+  border: none;
+  border-radius: 600px;
+
+  /* адаптивные отступы */
+  padding: clamp(12px, 1vw, 16px) clamp(20px, 2vw, 32px);
+
+  /* убираем жесткие width/height */
+  min-height: clamp(44px, 5vw, 56px);
+  width: fit-content;
+
+  background: linear-gradient(116deg, #00ddce 0%, #01b6c0 57.69%, #017eac 100%);
+
+  font-family: var(--font-family);
+  font-weight: 600;
+
+  /* адаптивный текст */
+  font-size: clamp(12px, 0.9vw, 14px);
+  line-height: 1.4;
+
+  text-transform: uppercase;
+  color: var(--white);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-card__btn:hover {
+  background: linear-gradient(116deg, #00ddce 0%, #01b6c0 26.84%, #017eac 56.97%);
 }
 
 .service-card:hover .service-card__btn,
@@ -83,6 +149,11 @@
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+.service-card:hover .service-card__title,
+.service-card:focus-within .service-card__title{
+  transform: translateY(-10px);
 }
 
 .services__cards.is-swiper{
@@ -106,24 +177,10 @@
 }
 
 @media (max-width: 768px){
-  .services__container{
-    padding-top: 40px;
-  }
-
   .services__lead{
     text-align: left;
     padding-left: 10px;
     padding-right: 10px;
-  }
-
-  .service-card__image{
-    height: 160px;
-  }
-
-  .service-card__meta{
-    position: static;
-    padding: 0 24px 18px;
-    gap: 12px;
   }
 
   /* На тач-устройствах hover нет, поэтому кнопку показываем всегда */
@@ -131,6 +188,10 @@
     opacity: 1;
     transform: none;
     pointer-events: auto;
+  }
+
+  .service-card__title{
+    transform: none;
   }
 }
 

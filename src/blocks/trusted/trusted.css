@@ -1,9 +1,9 @@
 .trusted{
-  padding-bottom: 120px;
+  padding-bottom: var(--section-pad-bottom);
 }
 
 .trusted__container{
-  padding-top: 60px;
+  padding-top: var(--section-pad-top);
 }
 
 .trusted__grid{
@@ -14,9 +14,6 @@
 
 .trusted__item{
   min-height: 92px;
-  border-radius: 16px;
-  border: 1px solid rgba(15, 23, 42, .08);
-  background: #fff;
   display: grid;
   place-items: center;
   padding: 14px;
@@ -24,9 +21,17 @@
 
 .trusted__item svg{
   width: 100%;
-  max-width: 120px;
+  max-width: min(120px, 32vw);
   height: auto;
   color: #a8bccf;
+}
+
+.trusted__logo{
+  width: 100%;
+  max-width: min(274px, 72vw);
+  height: clamp(72px, 18vw, 140px);
+  object-fit: contain;
+  object-position: center;
 }
 
 .trusted__grid.is-swiper{

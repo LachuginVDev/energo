@@ -1,9 +1,9 @@
 .faq{
-  padding-bottom: 120px;
+  padding-bottom: var(--section-pad-bottom);
 }
 
 .faq__container{
-  padding-top: 60px;
+  padding-top: var(--section-pad-top);
 }
 
 .faq__grid{
@@ -14,23 +14,34 @@
 }
 
 .faq__mini{
-  color: var(--primary);
-  font-weight: 900;
-  letter-spacing: .08em;
-  font-size: 14px;
+    font-family: var(--font-family);
+  font-weight: 400;
+
+  font-size: clamp(11px, 0.8vw, 14px);
+  line-height: 1.2;
+
+  letter-spacing: clamp(0.12em, 0.2vw, 0.21em);
+
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--main-normal);
 }
 
 .faq__title{
   margin: 8px 0 12px;
-  font-size: clamp(28px, 2.4vw, 42px);
+  font-family: var(--font-family);
+  font-weight: 600;
+
+  font-size: clamp(28px, 4vw, 48px);
   line-height: 1.1;
-  font-weight: 900;
+text-align: left;
+  color: var(--text-dark);
 }
 
 .faq__subtitle{
   margin: 0;
   color: var(--muted);
-  font-size: 15px;
+  font-size: clamp(14px, 1.3vw, 15px);
   line-height: 1.6;
   max-width: 520px;
 }
@@ -48,9 +59,7 @@
 }
 
 .faq-item{
-  border-radius: 18px;
-  background: #fff;
-  border: 1px solid rgba(15, 23, 42, .08);
+
   overflow: hidden;
 }
 
@@ -74,8 +83,6 @@
 .faq-item__arrow{
   width: 22px;
   height: 22px;
-  border-radius: 999px;
-  background: rgba(11, 95, 255, .1);
   position: relative;
   flex: 0 0 auto;
 }
@@ -87,8 +94,8 @@
   top: 6px;
   width: 8px;
   height: 8px;
-  border-right: 2px solid var(--primary);
-  border-bottom: 2px solid var(--primary);
+  border-right: 2px solid var(--main-light);
+  border-bottom: 2px solid var(--main-light);
   transform: rotate(45deg);
   transition: transform .2s ease, top .2s ease;
 }
@@ -99,20 +106,24 @@
 }
 
 .faq-item__label{
-  font-weight: 800;
-  font-size: 17px;
-  line-height: 1.35;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 152%;
+  color: var(--text-dark);
 }
 
 .faq-item__body{
-  padding: 0 16px 14px 50px;
+  padding: 0 16px 14px clamp(18px, 5vw, 50px);
 }
 
 .faq-item__text{
   margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.6;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 152%;
+  color: var(--text-mormal);
 }
 
 @media (max-width: 900px){
@@ -121,4 +132,3 @@
     gap: 24px;
   }
 }
-

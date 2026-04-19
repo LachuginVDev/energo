@@ -1,11 +1,15 @@
 .objects{
-  padding-bottom: 120px;
+  padding-bottom: var(--section-pad-bottom);
+}
+
+.objects__container{
+  padding-top: var(--section-pad-top);
 }
 
 .objects__cards{
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 24px);
   justify-items: center;
 }
 
@@ -25,14 +29,14 @@
 
 .object-card__title{
   margin: 0;
-  font-size: 18px;
+  font-size: clamp(16px, 1.8vw, 18px);
   font-weight: 800;
   line-height: 1.25;
 }
 
 .object-card__text{
   margin: 10px 0 0;
-  font-size: 14px;
+  font-size: clamp(13px, 1.2vw, 14px);
   color: var(--muted);
   line-height: 1.55;
 }

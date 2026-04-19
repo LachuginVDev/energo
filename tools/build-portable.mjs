@@ -23,6 +23,12 @@ async function buildPortable() {
     minify: false,
     sourcemap: false,
     charset: 'utf8',
+    assetNames: 'media/[hash]',
+    loader: {
+      '.svg': 'file',
+      '.mp4': 'file',
+      '.png': 'file',
+    },
     logLevel: 'info',
   });
 
